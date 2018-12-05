@@ -6,7 +6,7 @@ def handler(event, context):
     data = {
         'output': 'Hello World',
         'timestamp': datetime.datetime.utcnow().isoformat(),
-        'event': event
+        'params': event.get('multiValueQueryStringParameters', {})
     }
     return {'statusCode': 200,
             'body': json.dumps(data),
