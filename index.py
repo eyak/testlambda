@@ -6,8 +6,7 @@ def handler(event, context):
     data = {
         'output': 'Hello World',
         'timestamp': datetime.datetime.utcnow().isoformat(),
-        'event': event,
-        'context': context
+        'event': event
     }
     return {'statusCode': 200,
             'body': json.dumps(data),
