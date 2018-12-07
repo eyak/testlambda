@@ -1,6 +1,6 @@
 import json
 import datetime
-#import PIL
+import PIL
 
 def handler(event, context):
     data = {
