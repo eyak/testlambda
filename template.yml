@@ -33,7 +33,7 @@ Resources:
           Properties:
             Path: /
             Method: get
-        GetEvent:
+        GetPreviewEvent:
           Type: Api
           Properties:
             Path: /preview/
