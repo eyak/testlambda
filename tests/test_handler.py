@@ -1,9 +1,16 @@
 import unittest
 import index
 
-
 class TestHandlerCase(unittest.TestCase):
+    
+    def test_PIL(self):
+        try:
+            import PIL
+            print('PIL', PIL.VERSION)
+        except:
+            print('PIL failed')
 
+        
     def test_response(self):
         print("testing response.")
         result = index.handler({}, None)
