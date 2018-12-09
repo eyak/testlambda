@@ -9,7 +9,7 @@ import os
 def handler(event, context):
     params = event.get('multiValueQueryStringParameters', {})
     path = event.get('path', '').strip('/')
-    stage = context.get('stage', None)
+    stage = event.get('stage', None)
     stageVariables = event.get('stageVariables', {})
     httpMethod = event.get('httpMethod', None)
     
