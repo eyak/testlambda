@@ -9,9 +9,9 @@ import os
 def handler(event, context):
     params = event.get('multiValueQueryStringParameters', {})
     path = event.get('path', '').strip('/')
-    stage = event.get('stage', {})
+    stage = context.get('stage', None)
     stageVariables = event.get('stageVariables', {})
-    httpMethod = event.get('httpMethod', '')
+    httpMethod = event.get('httpMethod', None)
     
     if httpMethod == 'POST':
         body = event.get('body', '')

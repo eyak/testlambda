@@ -6,7 +6,7 @@ class TestHandlerCase(unittest.TestCase):
 
     def test_response(self):
         print("testing response.")
-        result = index.handler({'httpMethod': 'GET', 'path': '/'}, None)
+        result = index.handler({'httpMethod': 'GET', 'path': '/'}, {})
         print(result)
         self.assertEqual(result['statusCode'], 200)
         self.assertEqual(result['headers']['Content-Type'], 'application/json')
