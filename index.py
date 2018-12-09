@@ -4,6 +4,7 @@ site.addsitedir('./packages')
 import json
 import datetime
 import boto3
+import os
 
 def handler(event, context):
     params = event.get('multiValueQueryStringParameters', {})
@@ -37,7 +38,8 @@ def handler(event, context):
         'stageVariables': stageVariables,
         'httpMethod': httpMethod,
         'body': body,
-        'action': action
+        'action': action,
+        'env': os.environ
     }
     
     
