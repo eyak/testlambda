@@ -18,6 +18,10 @@ Parameters:
 #       Enabled: true
 #       Type: Canary10Percent5Minutes
 
+
+# To create more endpoints, modify the relevant role CodeStarWorker-testlambda-Lambda, and add execute-api resources
+# https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-control-access-using-iam-policies-to-invoke-api.html
+
 Resources:
   HelloWorld:
     Type: AWS::Serverless::Function
