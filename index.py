@@ -9,7 +9,8 @@ import os
 def handler(event, context):
     params = event.get('multiValueQueryStringParameters', {})
     path = event.get('path', '').strip('/')
-    stage = event.get('stage', None)
+    requestContext = event.get('requestContext', {})
+    stage = requestContext.get('stage', '')
     stageVariables = event.get('stageVariables', {})
     httpMethod = event.get('httpMethod', None)
     
@@ -34,9 +35,7 @@ def handler(event, context):
         'timestamp': datetime.datetime.utcnow().isoformat(),
         'params': params,
         'path': path,
-        #'stage': str(stage,
-        'event': str(event),
-        'context': str(context),
+        'stage': stage,
         'stageVariables': stageVariables,
         'httpMethod': httpMethod,
         'body': body,
