@@ -36,7 +36,7 @@ Resources:
         GetPreviewEvent:
           Type: Api
           Properties:
-            Path: /preview/
+            Path: /preview
             Method: get
         PostEvent:
           Type: Api
