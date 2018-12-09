@@ -1,19 +1,12 @@
 import unittest
 import index
 
-class TestHandlerCase(unittest.TestCase):
-    
-    def test_PIL(self):
-        try:
-            import PIL
-            print('PIL', PIL.VERSION)
-        except:
-            print('PIL failed')
 
-        
+class TestHandlerCase(unittest.TestCase):
+
     def test_response(self):
         print("testing response.")
-        result = index.handler({}, None)
+        result = index.handler({'httpMethod': 'GET', 'path': '/'}, None)
         print(result)
         self.assertEqual(result['statusCode'], 200)
         self.assertEqual(result['headers']['Content-Type'], 'application/json')
