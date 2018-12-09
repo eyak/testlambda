@@ -39,7 +39,7 @@ def handler(event, context):
         'httpMethod': httpMethod,
         'body': body,
         'action': action,
-        'env': os.environ
+        'env': str(os.environ)
     }
     
     
