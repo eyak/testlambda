@@ -14,6 +14,8 @@ def handler(event, context):
     stageVariables = event.get('stageVariables', {})
     httpMethod = event.get('httpMethod', None)
     
+    envVar1 = os.getenv('var1')
+    
     if httpMethod == 'POST':
         body = event.get('body', '')
     else:
@@ -40,7 +42,7 @@ def handler(event, context):
         'httpMethod': httpMethod,
         'body': body,
         'action': action,
-        'env': str(os.environ)
+        'var1': envVar1
     }
     
     
